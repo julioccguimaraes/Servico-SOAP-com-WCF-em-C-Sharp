@@ -53,9 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202111041256439_Criacao_do_Banco.cs" />
-    <Compile Include="Migrations\202111041256439_Criacao_do_Banco.designer.cs">
-      <DependentUpon>202111041256439_Criacao_do_Banco.cs</DependentUpon>
+    <Compile Include="Migrations\202111042100158_Criacao_do_Banco.cs" />
+    <Compile Include="Migrations\202111042100158_Criacao_do_Banco.designer.cs">
+      <DependentUpon>202111042100158_Criacao_do_Banco.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,8 +66,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202111041256439_Criacao_do_Banco.resx">
-      <DependentUpon>202111041256439_Criacao_do_Banco.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111042100158_Criacao_do_Banco.resx">
+      <DependentUpon>202111042100158_Criacao_do_Banco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

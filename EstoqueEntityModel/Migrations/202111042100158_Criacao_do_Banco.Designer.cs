@@ -13,7 +13,7 @@ namespace EstoqueEntityModel.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202111041256439_Criacao_do_Banco"; }
+            get { return "202111042100158_Criacao_do_Banco"; }
         }
         
         string IMigrationMetadata.Source

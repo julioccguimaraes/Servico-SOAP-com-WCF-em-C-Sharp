@@ -18,8 +18,7 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
-
-            context.ProdutoEstoque.AddOrUpdate(
+            context.ProdutoEstoques.AddOrUpdate(
                 p => p.Id,
                 new ProdutoEstoque { NumeroProduto = "1000", NomeProduto = "Produto 1", DescricaoProduto = "Este é o produto 1", EstoqueProduto = 100 },
                 new ProdutoEstoque { NumeroProduto = "2000", NomeProduto = "Produto 2", DescricaoProduto = "Este é o produto 2", EstoqueProduto = 10 },
@@ -31,7 +30,7 @@
                 new ProdutoEstoque { NumeroProduto = "8000", NomeProduto = "Produto 8", DescricaoProduto = "Este é o produto 8", EstoqueProduto = 30 },
                 new ProdutoEstoque { NumeroProduto = "9000", NomeProduto = "Produto 9", DescricaoProduto = "Este é o produto 9", EstoqueProduto = 400 },
                 new ProdutoEstoque { NumeroProduto = "10000", NomeProduto = "Produto 10", DescricaoProduto = "Este é o produto 10", EstoqueProduto = 2 }
-            );
+                );
 
             context.SaveChanges();
         }

@@ -12,9 +12,9 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        NumeroProduto = c.String(nullable: false),
-                        NomeProduto = c.String(nullable: false),
-                        DescricaoProduto = c.String(nullable: true),
+                        NumeroProduto = c.String(),
+                        NomeProduto = c.String(),
+                        DescricaoProduto = c.String(),
                         EstoqueProduto = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

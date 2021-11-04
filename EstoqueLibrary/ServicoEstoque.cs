@@ -29,10 +29,10 @@ namespace EstoqueLibrary
                     {
                         // Find the product object that matches the parameters passed
                         // in to the operation
-                        ProdutoEstoque produto = database.ProdutoEstoque.First(p => string.Compare(p.NumeroProduto, NumeroProduto) == 0);
+                        ProdutoEstoque produto = database.ProdutoEstoques.First(p => string.Compare(p.NumeroProduto, NumeroProduto) == 0);
 
                         produto.EstoqueProduto += Quantidade;
-                        database.ProdutoEstoque.Add(produto);
+                        database.ProdutoEstoques.Add(produto);
 
                         // Save the change back to the database
                         database.SaveChanges();
@@ -59,7 +59,7 @@ namespace EstoqueLibrary
                     if (ProductExists(NumeroProduto, database))
                     {
                         // Calculate the sum of all quantities for the specified product
-                        quantityTotal = (from p in database.ProdutoEstoque 
+                        quantityTotal = (from p in database.ProdutoEstoques 
                                          where string.Compare(p.NumeroProduto, NumeroProduto) == 0
                                          select p.EstoqueProduto).First();
                     }
@@ -93,7 +93,7 @@ namespace EstoqueLibrary
                             EstoqueProduto = produto.EstoqueProduto
                         };
 
-                        database.ProdutoEstoque.Add(produtoEstoque);
+                        database.ProdutoEstoques.Add(produtoEstoque);
 
                         // Save the change back to the database
                         database.SaveChanges();
@@ -119,7 +119,7 @@ namespace EstoqueLibrary
                 using (ProvedorEstoque database = new ProvedorEstoque())
                 {
                     // Fetch the products in the database
-                    List<ProdutoEstoque> products = (from product in database.ProdutoEstoque
+                    List<ProdutoEstoque> products = (from product in database.ProdutoEstoques
                                               select product).ToList();
 
                     foreach (ProdutoEstoque product in products)
@@ -149,10 +149,10 @@ namespace EstoqueLibrary
                     {
                         // Find the product object that matches the parameters passed
                         // in to the operation
-                        ProdutoEstoque produto = database.ProdutoEstoque.First(p => string.Compare(p.NumeroProduto, NumeroProduto) == 0);
+                        ProdutoEstoque produto = database.ProdutoEstoques.First(p => string.Compare(p.NumeroProduto, NumeroProduto) == 0);
 
                         produto.EstoqueProduto -= Quantidade;
-                        database.ProdutoEstoque.Add(produto);
+                        database.ProdutoEstoques.Add(produto);
 
                         // Save the change back to the database
                         database.SaveChanges();
@@ -181,9 +181,9 @@ namespace EstoqueLibrary
                     {
                         // Find the product object that matches the parameters passed
                         // in to the operation
-                        ProdutoEstoque produto = database.ProdutoEstoque.First(p => string.Compare(p.NumeroProduto, NumeroProduto) == 0);
+                        ProdutoEstoque produto = database.ProdutoEstoques.First(p => string.Compare(p.NumeroProduto, NumeroProduto) == 0);
 
-                        database.ProdutoEstoque.Remove(produto);
+                        database.ProdutoEstoques.Remove(produto);
 
                         // Save the change back to the database
                         database.SaveChanges();
@@ -210,7 +210,7 @@ namespace EstoqueLibrary
                     if (ProductExists(NumeroProduto, database))
                     {
                         // Find the product object that matches the parameters passed
-                        ProdutoEstoque matchingProduct = database.ProdutoEstoque.First(p =>
+                        ProdutoEstoque matchingProduct = database.ProdutoEstoques.First(p =>
                             string.Compare(p.NomeProduto, NumeroProduto) == 0);
 
                         produto = new Produto()
@@ -234,7 +234,7 @@ namespace EstoqueLibrary
         public bool ProductExists(string NumeroProduto, ProvedorEstoque database)
         {
             // Check to see whether the specified product exists in the database
-            int numProducts = (from p in database.ProdutoEstoque
+            int numProducts = (from p in database.ProdutoEstoques
                                where string.Equals(p.NumeroProduto, NumeroProduto)
                                select p).Count();
 
