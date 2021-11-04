@@ -32,7 +32,7 @@ namespace EstoqueLibrary
                         ProdutoEstoque produto = database.ProdutoEstoques.First(p => string.Compare(p.NumeroProduto, NumeroProduto) == 0);
 
                         produto.EstoqueProduto += Quantidade;
-                        database.ProdutoEstoques.Add(produto);
+                        //database.ProdutoEstoques.Add(produto);
 
                         // Save the change back to the database
                         database.SaveChanges();
@@ -152,7 +152,7 @@ namespace EstoqueLibrary
                         ProdutoEstoque produto = database.ProdutoEstoques.First(p => string.Compare(p.NumeroProduto, NumeroProduto) == 0);
 
                         produto.EstoqueProduto -= Quantidade;
-                        database.ProdutoEstoques.Add(produto);
+                        //database.ProdutoEstoques.Add(produto);
 
                         // Save the change back to the database
                         database.SaveChanges();
