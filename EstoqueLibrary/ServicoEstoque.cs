@@ -211,7 +211,7 @@ namespace EstoqueLibrary
                     {
                         // Find the product object that matches the parameters passed
                         ProdutoEstoque matchingProduct = database.ProdutoEstoques.First(p =>
-                            string.Compare(p.NomeProduto, NumeroProduto) == 0);
+                            string.Compare(p.NumeroProduto, NumeroProduto) == 0);
 
                         produto = new Produto()
                         {
